@@ -1,0 +1,25 @@
+import React, { useState } from 'react';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import LoginScreen from './src/screens/auth/LoginScreen';
+import BookingScreen from './src/screens/customer/BookingScreen';
+import TermsScreen from './src/screens/customer/TermsScreen';
+
+export default function App() {
+  const [role, setRole] = useState(null);
+  const [termsAccepted, setTermsAccepted] = useState(false);
+
+  let ViewToDisplay;
+  if (!role) {
+    ViewToDisplay = <LoginScreen onSelectRole={setRole} />;
+  } else if (role === 'customer' && !termsAccepted) {
+    ViewToDisplay = <TermsScreen onAccept={() => setTermsAccepted(true)} />;
+  } else {
+    ViewToDisplay = <BookingScreen />; // We will build the Staff/Admin views next
+  }
+
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1 }}>{ViewToDisplay}</SafeAreaView>
+    </SafeAreaProvider>
+  );
+}
