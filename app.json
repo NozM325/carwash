@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "shybay-app",
-    "slug": "shybay-app",
+    "name": "Shybay",
+    "slug": "shybay-carwash",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -10,15 +10,22 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier": "com.shybay.carwash",
+      "buildNumber": "1",
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Shybay needs access to your location to calculate distances and provide accurate service pricing.",
-        "NSLocationAlwaysAndWhenInUseUsageDescription": "Shybay needs access to your location to calculate distances and provide accurate service pricing."
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Shybay needs access to your location to calculate distances and provide accurate service pricing.",
+        "NSCameraUsageDescription": "Take photos for service verification",
+        "NSContactsUsageDescription": "Access contacts for easy booking",
+        "ITSAppUsesNonExemptEncryption": false
       },
       "config": {
-        "googleMapsApiKey": "YOUR_GOOGLE_MAPS_API_KEY_HERE"
+        "googleMapsApiKey": "AIzaSyCBR69I8PG4Wre61m0IvGi9DTrtsv6augo"
       }
     },
     "android": {
+      "package": "com.shybay.carwash",
+      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -27,11 +34,13 @@
       },
       "permissions": [
         "ACCESS_COARSE_LOCATION",
-        "ACCESS_FINE_LOCATION"
+        "ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
       ],
       "config": {
         "googleMaps": {
-          "apiKey": "YOUR_GOOGLE_MAPS_API_KEY_HERE"
+          "apiKey": "AIzaSyCBR69I8PG4Wre61m0IvGi9DTrtsv6augo"
         }
       },
       "edgeToEdgeEnabled": true,
@@ -63,6 +72,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "08d03a97-0a12-4de9-9ca0-b7405e767724"
+      }
+    },
+    "owner": "noz00"
   }
 }
